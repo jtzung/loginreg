@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="site.css">
+   
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    @model ValidateUser
+<p> @ViewBag.Error </p>
+<form asp-controller="Home" asp-action="Register" method="post">
+    <span asp-validation-for="Name"></span>
+    <label asp-for="Name">Name: </label>
+    <input  asp-for="Name" />
+    <br/>
+    <span asp-validation-for="Email"></span>
+    <label asp-for="Email">Email: </label>
+    <input asp-for="Email" />
+    <br/>
+    <span asp-validation-for="Password"></span>
+    <label asp-for="Password">Password: </label>
+    <input asp-for="Password" />
+
+    <span asp-validation-for="ConfirmPassword"></span>
+    <label asp-for="ConfirmPassword"> ConfirmPassword: </label>
+    <input asp-for="ConfirmPassword" />
+    <br/>
+    <span asp-validation-for="Age"></span>
+    <label asp-for="Age">Age: </label>
+    <input asp-for="Age" />
+    <br/>
+    <button type="submit">Register</button>
+</form>
+
+<form action="/login" method="post">
+    <label for="Email">
+        Email:
+        <input type="text" name="Email">
+    </label>
+    <br/>
+    <label for="Password">
+        Password:
+        <input type="password" name="Password">
+    </label>
+    <br/>
+    <input type="submit" value="Login">
+</form>
+</div> 
+    
+</body>
+</html>
